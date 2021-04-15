@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CatService } from '../services/cat.service';
 
 @Component({
   selector: 'app-cat-species',
@@ -6,12 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cat-species.component.scss'],
 })
 export class CatSpeciesComponent {
-  species = [
-    'Himalayan',
-    'Siamese',
-    'Russian Blue',
-    'Maine Coon',
-    'Savannah',
-    'Scottish Fold',
-  ];
+  breeds$ = this.catService.getBreeds();
+  constructor(private catService: CatService) {}
 }
