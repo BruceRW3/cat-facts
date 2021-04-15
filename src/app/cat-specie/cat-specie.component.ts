@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Breed } from '../services/cat.service';
 
 @Component({
   selector: 'app-cat-specie',
@@ -6,5 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cat-specie.component.scss'],
 })
 export class CatSpecieComponent {
-  @Input() speciesName: string = '';
+  @Input() breed: Breed | null = null;
 }
